@@ -2,52 +2,50 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'My Yii Application';
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+$this->title = 'Howdy!';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-        <h1 class="display-4">Congratulations!</h1>
+    <!-- <div class="jumbotron text-center bg-transparent mt-5 mb-5">
+        <h1 class="display-4">Selamat Datang!</h1>
+        <p class="lead">Silakan pilih salah satu fitur berikut.</p>
+    </div> -->
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
+    <div class="container">
         <div class="row">
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
+            <?php
+            $fitur = [
+                ['label' => 'Master Barang', 'icon' => 'fa-box', 'color' => 'info', 'url' => '#'],
+                ['label' => 'Kategori', 'icon' => 'fa-tags', 'color' => 'success', 'url' => '#'],
+                ['label' => 'Stok Masuk', 'icon' => 'fa-arrow-down', 'color' => 'warning', 'url' => '#'],
+                ['label' => 'Stok Keluar', 'icon' => 'fa-arrow-up', 'color' => 'danger', 'url' => '#'],
+                ['label' => 'Supplier', 'icon' => 'fa-truck', 'color' => 'primary', 'url' => '#'],
+                ['label' => 'Laporan', 'icon' => 'fa-file-alt', 'color' => 'secondary', 'url' => '#'],
+                ['label' => 'User', 'icon' => 'fa-users', 'color' => 'dark', 'url' => '#'],
+                ['label' => 'Pengaturan', 'icon' => 'fa-cog', 'color' => 'teal', 'url' => '#'],
+                ['label' => 'Bantuan', 'icon' => 'fa-question-circle', 'color' => 'orange', 'url' => '#'],
+            ];
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+            foreach ($fitur as $item) {
+                echo '<div class="col-lg-4 col-6 mb-4">
+                        <div class="small-box bg-' . $item['color'] . '">
+                            <div class="inner">
+                                <h4>' . Html::encode($item['label']) . '</h4>
+                                <p>Klik untuk masuk</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas ' . $item['icon'] . '"></i>
+                            </div>
+                            <a href="' . Url::to($item['url']) . '" class="small-box-footer">
+                                Masuk <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>';
+            }
+            ?>
         </div>
-
     </div>
 </div>
