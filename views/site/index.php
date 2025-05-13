@@ -18,15 +18,15 @@ $this->title = 'Howdy!';
         <div class="row">
             <?php
             $fitur = [
-                ['label' => 'Master Barang', 'icon' => 'fa-box', 'color' => 'info', 'url' => '#'],
-                ['label' => 'Kategori', 'icon' => 'fa-tags', 'color' => 'success', 'url' => '#'],
-                ['label' => 'Stok Masuk', 'icon' => 'fa-arrow-down', 'color' => 'warning', 'url' => '#'],
-                ['label' => 'Stok Keluar', 'icon' => 'fa-arrow-up', 'color' => 'danger', 'url' => '#'],
-                ['label' => 'Supplier', 'icon' => 'fa-truck', 'color' => 'primary', 'url' => '#'],
-                ['label' => 'Laporan', 'icon' => 'fa-file-alt', 'color' => 'secondary', 'url' => '#'],
-                ['label' => 'User', 'icon' => 'fa-users', 'color' => 'dark', 'url' => '#'],
-                ['label' => 'Pengaturan', 'icon' => 'fa-cog', 'color' => 'teal', 'url' => '#'],
-                ['label' => 'Bantuan', 'icon' => 'fa-question-circle', 'color' => 'orange', 'url' => '#'],
+                ['label' => 'Master Barang', 'icon' => 'fa-box', 'color' => 'info', 'url' => 'barang/index'],
+                ['label' => 'Satuan Barang', 'icon' => 'fa-list-ol', 'color' => 'warning', 'url' => 'satuan-barang/index'],
+                ['label' => 'Kategori Barang', 'icon' => 'fa-layer-group', 'color' => 'danger', 'url' => 'kategori/index'],
+                ['label' => 'Faktur Penjualan', 'icon' => 'fa-file-invoice', 'color' => 'success', 'url' => 'faktur-penjualan/index'],
+                // ['label' => 'Supplier', 'icon' => 'fa-truck', 'color' => 'primary', 'url' => '#'],
+                // ['label' => 'Laporan', 'icon' => 'fa-file-alt', 'color' => 'secondary', 'url' => '#'],
+                // ['label' => 'User', 'icon' => 'fa-users', 'color' => 'dark', 'url' => '#'],
+                // ['label' => 'Pengaturan', 'icon' => 'fa-cog', 'color' => 'teal', 'url' => '#'],
+                // ['label' => 'Bantuan', 'icon' => 'fa-question-circle', 'color' => 'orange', 'url' => '#'],
             ];
 
             foreach ($fitur as $item) {

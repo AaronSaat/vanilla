@@ -24,23 +24,23 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="<?= \yii\helpers\Url::to(['/satuan-barang/index']) ?>" class="nav-link">
+                        <i class="nav-icon fas fa-list-ol"></i>
+                        <p>Satuan Barang</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="<?= \yii\helpers\Url::to(['/kategori/index']) ?>" class="nav-link">
-                        <i class="nav-icon fas fa-tags"></i>
-                        <p>Kategori</p>
+                        <i class="nav-icon fas fa-layer-group"></i>
+                        <p>Kategori Barang</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="<?= \yii\helpers\Url::to(['/stok-masuk/index']) ?>" class="nav-link">
-                        <i class="nav-icon fas fa-arrow-down"></i>
-                        <p>Stok Masuk</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="<?= \yii\helpers\Url::to(['/stok-keluar/index']) ?>" class="nav-link">
-                        <i class="nav-icon fas fa-arrow-up"></i>
-                        <p>Stok Keluar</p>
+                    <a href="<?= \yii\helpers\Url::to(['/faktur-penjualan/index']) ?>" class="nav-link">
+                        <i class="nav-icon fas fa-file-invoice"></i>
+                        <p>Faktur Penjualan</p>
                     </a>
                 </li>
             </ul>

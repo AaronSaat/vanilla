@@ -9,17 +9,28 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'modules' => [
         'admin' => [
             'class' => 'mdm\admin\Module',
-            'layout' => 'left-menu', 
+            'layout' => 'left-menu',
         ],
     ],
     'components' => [
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'currencyCode' => 'IDR',
+            'locale' => 'id-ID',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => '.',
+            'currencyDecimalSeparator' => ',',
+            'numberFormatterSymbols' => [
+                \NumberFormatter::CURRENCY_SYMBOL => 'Rp. ',
+            ],
+        ],
         'authManager' => [
-            'class' => 'yii\rbac\DbManager', 
+            'class' => 'yii\rbac\DbManager',
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
