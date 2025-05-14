@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'deskripsi',
             [
                 'class' => 'yii\grid\ActionColumn',
+                'header' => 'Action',
                 'template' => '{edit} {delete}',
                 'buttons' => [
                     'edit' => function ($url, $model, $key) {

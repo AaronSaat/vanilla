@@ -67,6 +67,12 @@ $config = [
                 'dmstr\adminlte\web\AdminLteAsset' => [
                     'skin' => false,
                 ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'class' => 'yii\bootstrap4\BootstrapAsset',
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'class' => 'yii\bootstrap4\BootstrapPluginAsset',
+                ],
             ],
         ],
         'urlManager' => [

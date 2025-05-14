@@ -38,9 +38,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="<?= \yii\helpers\Url::to(['/faktur-penjualan/index']) ?>" class="nav-link">
+                    <a href="<?= \yii\helpers\Url::to(['/faktur/index']) ?>" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice"></i>
                         <p>Faktur Penjualan</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="<?= \yii\helpers\Url::to(['/kop/index']) ?>" class="nav-link">
+                        <i class="nav-icon fas fa-file-signature"></i>
+                        <p>Kop Surat</p>
                     </a>
                 </li>
             </ul>
