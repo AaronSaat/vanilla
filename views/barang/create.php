@@ -71,7 +71,7 @@ $this->registerJs("
 
 
             <div class="form-group">
-                <label>Harga (Rupiah)</label>
+                <label>Harga (Satuan)</label>
                 <input type="text" id="harga-input" name="Barang[harga]" class="form-control" placeholder="Rp 0"
                     value="<?= $model->harga ?>">
             </div>

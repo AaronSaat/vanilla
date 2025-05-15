@@ -60,7 +60,7 @@ class KopController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Satuan barang berhasil diperbarui.');
+            Yii::$app->session->setFlash('success', 'Kop berhasil diperbarui.');
             return $this->redirect(['index']);
         }
 

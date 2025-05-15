@@ -71,25 +71,38 @@ $this->params['breadcrumbs'][] = $this->title;
             <th>Satuan</th>
             <th>Harga</th>
             <th>Diskon</th>
+            <th>Potongan Diskon</th>
             <th>Subtotal</th>
         </tr>
     </thead>
     <tbody>
         <?php
         $subtotal = 0;
+        $totalDiskon = 0;
+
         foreach ($modelFaktur->fakturDetails as $detail) {
-            $harga = $detail->barang->harga ?? 0; // Ambil harga dari barang terkait
-            $diskon = $detail->diskon ?? 0; // Misalnya, diskon bisa ditambahkan pada model
-            $total = ($harga - $diskon) * $detail->qty_barang;
+            $harga = $detail->barang->harga ?? 0;
+            $diskonPersen = $detail->barang->diskon ?? 0;
+            $qty = $detail->qty_barang;
+
+            // Hitung diskon nominal per item
+            $diskonNominal = ($diskonPersen / 100) * $harga;
+
+            // Total per baris setelah diskon
+            $total = ($harga - $diskonNominal) * $qty;
             $subtotal += $total;
+
+            // Total diskon untuk qty barang
+            $totalDiskon += $diskonNominal * $qty;
             ?>
             <tr>
                 <td><?= Html::encode($detail->barang->nama_barang) ?></td>
-                <td><?= Html::encode($detail->qty_barang) ?></td>
+                <td><?= Html::encode($qty) ?></td>
                 <td><?= Html::encode($detail->barang->satuan->satuan) ?></td>
                 <td><?= Html::encode($detail->barang->hargaFormatted) ?></td>
                 <td><?= Html::encode($detail->barang->diskonFormatted) ?></td>
-                <td><?= Yii::$app->formatter->asCurrency($subtotal) ?></td>
+                <td><?= 'Rp ' . number_format($diskonNominal, 0, ',', '.') ?></td>
+                <td><?= 'Rp ' . number_format($total, 0, ',', '.') ?></td>
             </tr>
         <?php } ?>
     </tbody>
@@ -100,9 +113,15 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <!-- Total Faktur -->
-<div class="col-md-6 text-end">
-    <strong>Total Faktur:</strong> <?= Yii::$app->formatter->asCurrency($subtotal) ?>
+<div class="row">
+    <div class="col-md-3"></div> <!-- kolom kosong 1 -->
+    <div class="col-md-3"></div> <!-- kolom kosong 2 -->
+    <div class="col-md-3"></div> <!-- kolom kosong 3 -->
+    <div class="col-md-3 text-end">
+        <strong>Total Faktur:</strong> <?= 'Rp ' . number_format($subtotal, 0, ',', '.') ?>
+    </div>
 </div>
+
 
 <div class="row">
     <div class="col-md-12 text-center">
