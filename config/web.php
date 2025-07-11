@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$baseUrl = str_replace('/web', '', (new \yii\web\Request)->getBaseUrl());
 
 $config = [
     'id' => 'basic',
@@ -35,6 +36,7 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'GsFeUfJf7CUqd-le0Qysm6qhMY5iqBt8',
+            'baseUrl' => $baseUrl,
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -63,17 +65,8 @@ $config = [
         ],
         'db' => $db,
         'assetManager' => [
-            'bundles' => [
-                'dmstr\adminlte\web\AdminLteAsset' => [
-                    'skin' => false,
-                ],
-                'yii\bootstrap\BootstrapAsset' => [
-                    'class' => 'yii\bootstrap4\BootstrapAsset',
-                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'class' => 'yii\bootstrap4\BootstrapPluginAsset',
-                ],
-            ],
+            'linkAssets' => false,
+            'appendTimestamp' => true,
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -83,7 +76,6 @@ $config = [
         ],
     ],
     'params' => $params,
-    'layout' => 'main',
 ];
 
 if (YII_ENV_DEV) {

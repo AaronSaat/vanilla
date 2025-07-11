@@ -24,6 +24,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="<?= \yii\helpers\Url::to(['/menu/index']) ?>" class="nav-link">
+                        <i class="nav-icon fas fa-utensils"></i>
+                        <p>Master Menu</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="<?= \yii\helpers\Url::to(['/satuan-barang/index']) ?>" class="nav-link">
                         <i class="nav-icon fas fa-list-ol"></i>
                         <p>Satuan Barang</p>
@@ -40,7 +47,14 @@
                 <li class="nav-item">
                     <a href="<?= \yii\helpers\Url::to(['/faktur/index']) ?>" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice"></i>
-                        <p>Faktur Penjualan</p>
+                        <p>Faktur</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="<?= \yii\helpers\Url::to(['/pesanan/index']) ?>" class="nav-link">
+                        <i class="nav-icon fas fa-concierge-bell"></i>
+                        <p>Pesanan</p>
                     </a>
                 </li>
 

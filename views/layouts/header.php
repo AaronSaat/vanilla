@@ -17,6 +17,14 @@ use yii\helpers\Url;
     </ul>
 
     <!-- Right navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <?= Html::a('<i class="fas fa-code mr-1"></i> Gii', Url::to(['/gii']), ['class' => 'nav-link']) ?>
+        </li>
+        <li class="nav-item">
+            <?= Html::a('<i class="fas fa-user-shield mr-1"></i> Admin', Url::to(['/admin']), ['class' => 'nav-link']) ?>
+        </li>
+    </ul>
     <ul class="navbar-nav ml-auto" style="padding-left: 15px; padding-right: 15px; border-left: 1px solid #dee2e6;">
         <!-- User Dropdown Menu -->
         <li class="nav-item dropdown">

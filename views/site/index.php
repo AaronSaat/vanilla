@@ -19,12 +19,12 @@ $this->title = 'Howdy!';
             <?php
             $fitur = [
                 ['label' => 'Master Barang', 'icon' => 'fa-box', 'color' => 'info', 'url' => 'barang/index'],
+                ['label' => 'Master Menu', 'icon' => 'fa-utensils', 'color' => 'secondary', 'url' => 'menu/index'],
                 ['label' => 'Satuan Barang', 'icon' => 'fa-list-ol', 'color' => 'warning', 'url' => 'satuan-barang/index'],
                 ['label' => 'Kategori Barang', 'icon' => 'fa-layer-group', 'color' => 'danger', 'url' => 'kategori/index'],
-                ['label' => 'Faktur Penjualan', 'icon' => 'fa-file-invoice', 'color' => 'success', 'url' => 'faktur/index'],
+                ['label' => 'Faktur', 'icon' => 'fa-file-invoice', 'color' => 'success', 'url' => 'faktur/index'],
+                ['label' => 'Pesanan', 'icon' => 'fa-concierge-bell', 'color' => 'light', 'url' => 'pesanan/index'],
                 ['label' => 'Kop Surat', 'icon' => 'fa-file-signature', 'color' => 'primary', 'url' => 'kop/index'],
-                // ['label' => 'Faktu', 'icon' => 'fa-file-alt', 'color' => 'secondary', 'url' => '#'],
-                // ['label' => 'User', 'icon' => 'fa-users', 'color' => 'dark', 'url' => '#'],
                 // ['label' => 'Pengaturan', 'icon' => 'fa-cog', 'color' => 'teal', 'url' => '#'],
                 // ['label' => 'Bantuan', 'icon' => 'fa-question-circle', 'color' => 'orange', 'url' => '#'],
             ];

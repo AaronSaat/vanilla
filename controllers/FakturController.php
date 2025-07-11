@@ -9,6 +9,7 @@ use app\models\FakturDetail;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Mpdf\Mpdf;
 
 class FakturController extends Controller
 {
@@ -230,6 +231,32 @@ class FakturController extends Controller
             'modelFaktur' => $modelFaktur,
             'modelFakturDetail' => $modelFakturDetail,
         ]);
+    }
+
+    public function actionPdf($id)
+    {
+        $modelFaktur = $this->findModel($id);
+
+        // Render partial view faktur/detail.php ke HTML string
+        $content = $this->renderPartial('detail', [
+            'modelFaktur' => $modelFaktur,
+        ]);
+
+        // Inisialisasi mPDF
+        $mpdf = new \Mpdf\Mpdf([
+            'format' => 'A4',
+            'orientation' => 'P'
+        ]);
+
+        $mpdf->WriteHTML($content);
+        $filename = 'Faktur_' . $modelFaktur->nomor_faktur . '.pdf';
+
+        // Output ke browser (download)
+        return Yii::$app->response->sendContentAsFile(
+            $mpdf->Output($filename, \Mpdf\Output\Destination::STRING_RETURN),
+            $filename,
+            ['mimeType' => 'application/pdf']
+        );
     }
 
     protected function findModel($id)

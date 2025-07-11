@@ -5,8 +5,24 @@ use yii\grid\GridView;
 $this->title = 'Detail Faktur';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php if (Yii::$app->controller->action->id === 'pdf'): ?>
+<style>
+    body { font-family: Arial, sans-serif; font-size: 12pt; }
+    .kop-surat { margin-bottom: 20px; }
+    .kop-surat h4 { margin: 0; font-size: 18pt; }
+    .kop-surat .info-toko { font-size: 10pt; }
+    .table { border-collapse: collapse; width: 100%; }
+    .table th, .table td { border: 1px solid #333; padding: 6px; }
+    .table th { background: #f2f2f2; }
+    .text-end { text-align: right; }
+    .text-center { text-align: center; }
+    .mb-3 { margin-bottom: 1rem; }
+    .mb-4 { margin-bottom: 1.5rem; }
+    hr { border: none; border-top: 2px solid #000; margin: 16px 0; }
+</style>
+<?php endif; ?>
 <!-- Kop Surat -->
-<div class="row mb-3">
+<div class="kop-surat row mb-3">
     <!-- Kolom 1: Logo -->
     <div class="col-md-2 d-flex align-items-center justify-content-center" style="min-height: 120px;">
         <?php if ($modelFaktur->kop->logo_toko): ?>
@@ -123,8 +139,10 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 
+<?php if (Yii::$app->controller->action->id !== 'pdf'): ?>
 <div class="row">
     <div class="col-md-12 text-center">
         <?= Html::a('Kembali', ['index'], ['class' => 'btn btn-primary']) ?>
     </div>
 </div>
+<?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-use yii\bootstrap4\Alert;
+use yii\bootstrap\Alert;
 ?>
 
 <div class="content-wrapper">
